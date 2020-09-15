@@ -1,0 +1,9 @@
+# node modules
+/node_modules
+
+# production
+*.css
+bundle.js*
+
+# database
+/server/database/*.db

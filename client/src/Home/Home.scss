@@ -1,0 +1,230 @@
+@import '../_color.scss';
+
+.home {
+
+  div.logo {
+    margin: 24px auto;
+    max-width: 600px;
+
+    svg.logo {
+      width: 80%;
+      max-width: 450px;
+      margin-left: 24px;
+      fill: #cc9425;
+    }
+  }
+
+  .layout {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .title {
+      padding: 24px 0 48px;
+
+      h2 {
+        display: block;
+        margin: 0 24px;
+        color: #666;
+        font-size: 1.2rem;
+        font-weight: normal;
+      }
+
+      h1 {
+        margin: 0 24px 24px;
+        font-size: 2.4rem;
+        font-weight: normal;
+      }
+    }
+
+    p {
+      margin: 0 24px;
+      padding: 0;
+      font-size: 1rem;
+      line-height: 32px;
+    }
+
+    div.main {
+      font-weight: bold;
+      margin: 0 0 48px;
+    }
+
+    .form {
+      margin: 24px;
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      input {
+        -webkit-appearance: none;
+        display: block;
+        width: calc(100% - 20px - 2px);
+        margin: 0 0 16px;
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: .25rem;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.6;
+        font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', meiryo, sans-serif;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  
+        &:focus {
+          border: solid 1px rgba(204,148,37,1);
+          box-shadow: 0 0 0 0.2rem rgba(204,148,37,.25);
+          outline: 0;
+        }
+  
+        &:active {
+          border: solid 1px rgba(204,148,37,1);
+        }
+      }
+    }
+
+    .button {
+      margin: 0 24px;
+
+      button {
+        display: block;
+        width: 100%;
+        border: 0;
+        padding: 10px;
+        margin: 16px auto;
+        border-radius: 2px;
+        background: #ddd;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all ease-in-out .1s;
+    
+        i {
+          font-size: 24px;
+        }
+    
+        &:hover {
+          background: rgba(204,148,37,1);
+          color: #fff;
+          transition: all ease-in-out 0s;
+        }
+
+        &:active {
+          background: rgba(204,148,37,1);
+          color: #fff;
+          transition: all ease-in-out .1s;
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 0.2rem rgba(204,148,37,.25);
+          outline: 0;
+        }
+    
+        &[disabled] {
+          color: #888;
+    
+          &:hover {
+            background: #ddd;
+            color: #888;
+          }
+
+          &:active {
+            background: #ddd;
+            color: #888;
+          }
+
+          &:focus {
+            box-shadow: none;
+            outline: 0;
+          }
+        }
+      }
+
+      p {
+        font-size: 14px;
+        color: gray;
+        text-align: center;
+      }
+    }
+
+    .link {
+      display: inline-block;
+      padding: 8px 12px;
+      border: .55px solid #666;
+      font-size: 16px;
+      color: #333;
+      background: rgba(0,0,0,0);
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: all ease-in-out .1s;
+
+      &:hover, &:focus, &:active {
+        background: rgba(0,0,0,.1);
+      }
+
+      & > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+
+        .text {
+          margin: 0 36px;
+        }
+
+        .link-arrow {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          i {
+            // margin-left: .2em;
+            color: #666;
+          }
+        }
+      }
+    }
+
+    .back-to-home {
+      display: block;
+      margin-top: 48px;
+      color: #666;
+
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+
+  footer {
+    width: 100%;
+    margin: 48px 0 0;
+    background: #eee;
+
+    & > div {
+      max-width: 1200px;
+      padding: 96px 24px;
+      box-sizing: border-box;
+      margin: 0 auto;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .author {
+        svg {
+          display: block;
+          width: 100%;
+          max-width: 450px;
+          fill: #666;
+        }
+
+        small {
+          display: block;
+          margin-top: 8px;
+          font-size: 12px;
+          color: #666;
+        }
+      }
+    }
+  }
+}
