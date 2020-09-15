@@ -71,7 +71,7 @@ const Home = () => {
               <input onChange={(e) => setName(e.target.value)} value={name} />
               <label>郵便番号</label>
               <div className="code">
-                <input onChange={(e) => setCode(e.target.value)} value={code} type="number" />
+                <input onChange={(e) => setCode(e.target.value)} value={code} type="number" pattern='\d*' />
                 <button>自動入力</button>
               </div>
               <label>ご住所</label>
