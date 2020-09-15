@@ -3,7 +3,7 @@ const app = express()
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended: true}))
-app.listen(3009)
+app.listen(3010)
 
 // クライアントアプリを返す
 const client = './client/build'
