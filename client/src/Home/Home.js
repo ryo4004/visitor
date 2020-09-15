@@ -81,10 +81,8 @@ const Home = () => {
             </div>
             <div className="button">
               <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>送信</button>
-              <p>お預かりした連絡先は</p>
-              <p>新型コロナウイルス感染症対策以外では</p>
-              <p>使用しません。</p>
-              <p><a href="https://winds-n.com/policy" target="_blank">ザ・ウィンド・アンサンブルの個人情報保護方針はこちら</a></p>
+              <p className="comment">入力された連絡先の<wbr />目的外使用はしません。</p>
+              <p><a href="https://winds-n.com/policy" target="_blank">詳しくはこちら</a></p>
             </div>
           </>
         )}

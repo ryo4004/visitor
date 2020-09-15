@@ -199,6 +199,10 @@
         font-size: 14px;
         color: gray;
         text-align: center;
+
+        &.comment {
+          white-space: nowrap;
+        }
       }
     }
 
