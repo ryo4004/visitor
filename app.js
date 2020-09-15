@@ -23,9 +23,9 @@ const database = new NeDB({
 const lib = require('./server/lib')
 
 app.post('/post', (req, res) => {
-  const { name, temperature } = req.body
+  const { name, code, address, tel } = req.body
   console.log('[' + lib.showTime() + '] post')
-  const reg = { name, temperature }
+  const reg = { name, code, address, tel }
   database.insert(reg, (error) => {
     if (error) {
       console.log('Database Error')

@@ -86,6 +86,10 @@
     .button {
       margin: 0 24px;
 
+      &.entry {
+        margin: 24px 24px 96px;
+      }
+
       button {
         display: block;
         width: 100%;
@@ -100,6 +104,20 @@
     
         i {
           font-size: 24px;
+        }
+
+        &.entry {
+          background: rgba(234,85,80,.8);
+          color: #fff;
+
+          &:hover {
+            background: rgba(234,85,80,1);
+          }
+
+          &:focus {
+            box-shadow: 0 0 0 0.2rem rgba(234,85,80,.25);
+            outline: 0;
+          }
         }
     
         &:hover {

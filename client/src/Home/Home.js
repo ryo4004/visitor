@@ -7,33 +7,37 @@ import './Home.css'
 
 const Home = () => {
   const [mode, setMode] = useState(0)
-  const [temperature, setTemperature] = useState("")
   const [name, setName] = useState("")
+  const [code, setCode] = useState("")
+  const [address, setAddress] = useState("")
+  const [tel, setTel] = useState("")
 
   const sendPost = (e) => {
     e.preventDefault()
-    if (temperature === "" || name === "") return false
+    if (name === "" || address === "" || tel === "") return false
     request.post('/post')
       .type('form')
-      .send({ name, temperature })
+      .send({ name, code, address, tel })
       .end((err, res) => {
         if (res.body.status) {
           setMode(1)
-          setTemperature("")
           setName("")
+          setCode("")
+          setAddress("")
+          setTel("")
           window.scrollTo(0, 0)
           Actions.toastShow("送信しました")
         }
       })
   }
 
-  const back = (e) => {
+  const changeMode = (e, mode) => {
     e.preventDefault()
-    setMode(0)
+    setMode(mode)
     window.scrollTo(0, 0)
   }
 
-  const buttondisabled = (temperature === "" || name === "") ? true : false
+  const buttondisabled = (name === "" || address === "" || tel === "") ? true : false
 
   return (
     <div className='home'>
@@ -43,12 +47,34 @@ const Home = () => {
       <div className='layout'>
         {mode === 0 && (
           <>
-            <p>リリックホールの楽屋入口にて体温測定ができます</p>
+            <div className='title'>
+              <h2>Visitor card</h2>
+              <h1>来場者カード</h1>
+            </div>
+            <p>新型コロナウイルス感染症対策として来場者カードの記入をお願いしております。</p>
+            <p>ご協力をお願いいたします。</p>
+            <div className="button entry">
+              <button onClick={(e) => changeMode(e, 1)} className="entry" onTouchStart={() => {}}>記入する</button>
+            </div>
+          </>
+        )}
+        {mode === 1 && (
+          <>
+            <div className='title'>
+              <h2>Visitor card</h2>
+              <h1>来場者カード</h1>
+            </div>
+            <p>新型コロナウイルス感染症対策として来場者カードの記入をお願いしております。</p>
+            <p>ご協力をお願いいたします。</p>
             <div className="form">
-              <label>本日の体温</label>
-              <input onChange={(e) => setTemperature(e.target.value)} value={temperature} type="number" />
-              <label>氏名</label>
+              <label>お名前</label>
               <input onChange={(e) => setName(e.target.value)} value={name} />
+              <label>郵便番号</label>
+              <input onChange={(e) => setCode(e.target.value)} value={code} type="number" />
+              <label>ご住所</label>
+              <input onChange={(e) => setAddress(e.target.value)} value={address} />
+              <label>電話番号</label>
+              <input onChange={(e) => setTel(e.target.value)} value={tel} type="number" />
             </div>
             <div className="button">
               <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>送信</button>
@@ -56,12 +82,12 @@ const Home = () => {
             </div>
           </>
         )}
-        {mode === 1 && (
+        {mode === 2 && (
           <>
             <p>ご協力ありがとうございました</p>
             <div className="button">
               <button onClick={(e) => back(e)} onTouchStart={() => {}}>戻る</button>
-            </div>            
+            </div>
           </>
         )}
       </div>
