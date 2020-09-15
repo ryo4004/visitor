@@ -70,7 +70,10 @@ const Home = () => {
               <label>お名前</label>
               <input onChange={(e) => setName(e.target.value)} value={name} />
               <label>郵便番号</label>
-              <input onChange={(e) => setCode(e.target.value)} value={code} type="number" />
+              <div className="code">
+                <input onChange={(e) => setCode(e.target.value)} value={code} type="number" />
+                <button>自動入力</button>
+              </div>
               <label>ご住所</label>
               <input onChange={(e) => setAddress(e.target.value)} value={address} />
               <label>電話番号</label>
@@ -78,7 +81,10 @@ const Home = () => {
             </div>
             <div className="button">
               <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>送信</button>
-              <p>記録は3週間を目安に削除します</p>
+              <p>お預かりした連絡先は</p>
+              <p>新型コロナウイルス感染症対策以外では</p>
+              <p>使用しません。</p>
+              <p><a href="https://winds-n.com/policy" target="_blank">ザ・ウィンド・アンサンブルの個人情報保護方針はこちら</a></p>
             </div>
           </>
         )}
