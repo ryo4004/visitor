@@ -79,7 +79,7 @@ const Home = () => {
               <input onChange={(e) => setTel(e.target.value)} value={tel} type="number" />
             </div>
             <div className="button input">
-              <button onClick={(e) => sendPost(e.target.value)} onTouchStart={() => {}} disabled={buttondisabled}>確認</button>
+              <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>確認</button>
               <p className="comment">入力された連絡先の<wbr />目的外使用はしません。</p>
               <p><a href="https://winds-n.com/policy" target="_blank">詳しくはこちら</a></p>
             </div>
