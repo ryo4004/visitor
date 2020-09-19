@@ -3,6 +3,8 @@ import request from 'superagent'
 import Logo from '../Component/Logo/Logo'
 import { Actions } from '../Component/Flux/Actions'
 
+import PostalCode from "./PostalCode"
+
 import './Home.css'
 
 const Home = () => {
@@ -64,23 +66,20 @@ const Home = () => {
               <h2>Visitor card</h2>
               <h1>来場者カード</h1>
             </div>
-            <p>新型コロナウイルス感染症対策として来場者カードの記入をお願いしております。</p>
-            <p>ご協力をお願いいたします。</p>
             <div className="form">
               <label>お名前</label>
               <input onChange={(e) => setName(e.target.value)} value={name} />
-              <label>郵便番号</label>
-              <div className="code">
-                <input onChange={(e) => setCode(e.target.value)} value={code} type="number" pattern='\d*' />
-                <button>自動入力</button>
-              </div>
-              <label>ご住所</label>
-              <input onChange={(e) => setAddress(e.target.value)} value={address} />
+              <PostalCode
+                onCodeChange={(value) => setCode(value)}
+                onAddressChange={(value) => setAddress(value)}
+                code={code}
+                address={address}
+              />
               <label>電話番号</label>
               <input onChange={(e) => setTel(e.target.value)} value={tel} type="number" />
             </div>
-            <div className="button">
-              <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>送信</button>
+            <div className="button input">
+              <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>確認</button>
               <p className="comment">入力された連絡先の<wbr />目的外使用はしません。</p>
               <p><a href="https://winds-n.com/policy" target="_blank">詳しくはこちら</a></p>
             </div>
