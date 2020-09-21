@@ -68,7 +68,7 @@ const Home = () => {
             </div>
             <div className="form">
               <label>お名前</label>
-              <input onChange={(e) => setName(e.target.value)} value={name} />
+              <input onChange={(e) => setName(e.target.value)} value={name} placeholder='お名前' />
               <PostalCode
                 onCodeChange={(value) => setCode(value)}
                 onAddressChange={(value) => setAddress(value)}
@@ -76,7 +76,7 @@ const Home = () => {
                 address={address}
               />
               <label>電話番号</label>
-              <input onChange={(e) => setTel(e.target.value)} value={tel} type="number" />
+              <input onChange={(e) => setTel(e.target.value)} value={tel} type="number" placeholder='電話番号' />
             </div>
             <div className="button input">
               <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>送信</button>
