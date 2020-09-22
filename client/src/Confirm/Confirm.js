@@ -29,6 +29,7 @@ const Confirm = () => {
           setCode('')
           setAddress('')
           setTel('')
+          localStorage.clear()
           window.scrollTo(0, 0)
           Actions.toastShow('送信しました')
           history.push('/exit')
