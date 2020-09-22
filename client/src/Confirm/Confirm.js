@@ -6,15 +6,15 @@ import { Actions } from '../Component/Flux/Actions'
 
 import PostalCode from '../PostalCode/PostalCode'
 
+import { useInput } from '../hooks/useInput'
+
 // import './Confirm.css'
 
 const Confirm = () => {
   const history = useHistory()
-  const [mode, setMode] = useState(0)
-  const [name, setName] = useState('')
-  const [code, setCode] = useState('')
-  const [address, setAddress] = useState('')
-  const [tel, setTel] = useState('')
+  const { state } = useInput()
+
+  console.log(state)
 
   const sendPost = (e) => {
     e.preventDefault()
@@ -56,15 +56,13 @@ const Confirm = () => {
         </div>
         <div className="form">
           <label>お名前</label>
-          <input onChange={(e) => setName(e.target.value)} value={name} placeholder="お名前" />
-          <PostalCode
-            onCodeChange={(value) => setCode(value)}
-            onAddressChange={(value) => setAddress(value)}
-            code={code}
-            address={address}
-          />
+          <p>{state.name}</p>
+          <label>郵便番号</label>
+          <p>{state.code}</p>
+          <label>ご住所</label>
+          <p>{state.address}</p>
           <label>電話番号</label>
-          <input onChange={(e) => setTel(e.target.value)} value={tel} type="number" placeholder="電話番号" />
+          <p>{state.tel}</p>
         </div>
         <div className="button input">
           <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>

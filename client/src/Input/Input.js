@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
 import request from 'superagent'
 import Logo from '../Component/Logo/Logo'
@@ -6,51 +6,13 @@ import { Actions } from '../Component/Flux/Actions'
 
 import PostalCode from '../PostalCode/PostalCode'
 
+import { useInput } from '../hooks/useInput'
+
 // import './Input.css'
-
-const useInput = () => {
-  const defaultInput = localStorage.getItem('answer')
-    ? JSON.parse(localStorage.getItem('answer'))
-    : {
-        name: '',
-        code: '',
-        address: '',
-        tel: '',
-      }
-
-  const [state, setState] = useState(defaultInput)
-
-  const updateState = (key, value) => {
-    setState({
-      ...state,
-      [key]: value,
-    })
-  }
-  return { state, updateState }
-}
 
 const Input = () => {
   const history = useHistory()
   const { state, updateState } = useInput()
-  const sendPost = (e) => {
-    e.preventDefault()
-    if (state.name === '' || state.address === '' || state.tel === '') return false
-    request
-      .post('/post')
-      .type('form')
-      .send({ name: state.name, code: state.code, address: state.address, tel: state.tel })
-      .end((err, res) => {
-        if (res.body.status) {
-          setMode(1)
-          setName('')
-          setCode('')
-          setAddress('')
-          setTel('')
-          window.scrollTo(0, 0)
-          Actions.toastShow('送信しました')
-        }
-      })
-  }
 
   const buttondisabled = state.name === '' || state.address === '' || state.tel === '' ? true : false
 
