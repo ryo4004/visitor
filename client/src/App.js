@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Scroll from './Component/Scroll/Scroll'
 import Base from './Base/Base'
@@ -11,14 +7,14 @@ import Home from './Home/Home'
 import Toast from './Component/Toast/Toast'
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
       <Router>
         <Toast />
         <Scroll>
           <Switch>
-            <Route exact path='/' component={Base} />
-            <Route exact path='/home' component={Home} />
+            <Route exact path="/" component={Base} />
+            <Route exact path="/home" component={Home} />
           </Switch>
         </Scroll>
       </Router>

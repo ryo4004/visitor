@@ -8,13 +8,9 @@ const Base = () => {
   }, [])
 
   if (redirect) {
-    return (
-      <Redirect to={redirect} />
-    )
+    return <Redirect to={redirect} />
   } else {
-    return (
-      <></>
-    )
+    return <></>
   }
 }
 

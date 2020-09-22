@@ -5,13 +5,13 @@
   right: 10px;
   margin: auto;
   border-radius: 10px;
-  background: rgba(0,0,0,.9);
+  background: rgba(0, 0, 0, 0.9);
   color: white;
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
   transform: translateY(80px);
   transition-delay: initial;
   transition-property: none;
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   z-index: 99;
 
   & > div {
@@ -27,6 +27,6 @@
     transform: translateY(-80px);
     transition-delay: initial;
     transition-property: none;
-    transition: transform .6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
   }
 }
