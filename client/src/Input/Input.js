@@ -7,7 +7,7 @@ import PostalCode from '../PostalCode/PostalCode'
 
 // import './Input.css'
 
-const Input = () => {
+const useInput = () => {
   const defaultInput = localStorage.getItem('answer')
     ? JSON.parse(localStorage.getItem('answer'))
     : {
@@ -16,18 +16,27 @@ const Input = () => {
         address: '',
         tel: '',
       }
-  const [name, setName] = useState('')
-  const [code, setCode] = useState('')
-  const [address, setAddress] = useState('')
-  const [tel, setTel] = useState('')
 
+  const [state, setState] = useState(defalutInput)
+
+  const updateState = (key, value) => {
+    setState({
+      ...state,
+      [key]: value,
+    })
+  }
+  return { state, updateState }
+}
+
+const Input = () => {
+  const { state, updateState } = useInput()
   const sendPost = (e) => {
     e.preventDefault()
-    if (name === '' || address === '' || tel === '') return false
+    if (state.name === '' || state.address === '' || state.tel === '') return false
     request
       .post('/post')
       .type('form')
-      .send({ name, code, address, tel })
+      .send({ name: state.name, code: state.code, address: state.address, tel: state.tel })
       .end((err, res) => {
         if (res.body.status) {
           setMode(1)
@@ -41,7 +50,7 @@ const Input = () => {
       })
   }
 
-  const buttondisabled = name === '' || address === '' || tel === '' ? true : false
+  const buttondisabled = state.name === '' || state.address === '' || state.tel === '' ? true : false
 
   return (
     <div className="home">
@@ -55,15 +64,20 @@ const Input = () => {
         </div>
         <div className="form">
           <label>お名前</label>
-          <input onChange={(e) => setName(e.target.value)} value={name} placeholder="お名前" />
+          <input onChange={(e) => updateState('name', e.target.value)} value={state.name} placeholder="お名前" />
           <PostalCode
-            onCodeChange={(value) => setCode(value)}
-            onAddressChange={(value) => setAddress(value)}
-            code={code}
-            address={address}
+            onCodeChange={(value) => updateState('code', value)}
+            onAddressChange={(value) => updateState('address', value)}
+            code={state.code}
+            address={state.address}
           />
           <label>電話番号</label>
-          <input onChange={(e) => setTel(e.target.value)} value={tel} type="number" placeholder="電話番号" />
+          <input
+            onChange={(e) => updateState('tel', e.target.value)}
+            value={state.tel}
+            type="number"
+            placeholder="電話番号"
+          />
         </div>
         <div className="button input">
           <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>
