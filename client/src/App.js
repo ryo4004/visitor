@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 
 import Scroll from './Component/Scroll/Scroll'
+import Base from './Base/Base'
 import Home from './Home/Home'
 import Toast from './Component/Toast/Toast'
 
@@ -16,7 +17,8 @@ export default class App extends Component {
         <Toast />
         <Scroll>
           <Switch>
-            <Route exact path='/' component={Home} />
+            <Route exact path='/' component={Base} />
+            <Route exact path='/home' component={Home} />
           </Switch>
         </Scroll>
       </Router>
