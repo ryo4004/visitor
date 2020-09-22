@@ -1,9 +1,11 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import Logo from '../Component/Logo/Logo'
 
 // import './Exit.css'
 
 const Exit = () => {
+  const history = useHistory()
   return (
     <div className="home">
       <div className="logo">
@@ -12,7 +14,7 @@ const Exit = () => {
       <div className="layout">
         <p>ご協力ありがとうございました</p>
         <div className="button">
-          <button onClick={(e) => back(e)} onTouchStart={() => {}}>
+          <button onClick={() => history.push('/home')} onTouchStart={() => {}}>
             戻る
           </button>
         </div>

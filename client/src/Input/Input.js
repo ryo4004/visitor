@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import request from 'superagent'
 import Logo from '../Component/Logo/Logo'
 import { Actions } from '../Component/Flux/Actions'
@@ -29,6 +30,7 @@ const useInput = () => {
 }
 
 const Input = () => {
+  const history = useHistory()
   const { state, updateState } = useInput()
   const sendPost = (e) => {
     e.preventDefault()
@@ -80,8 +82,8 @@ const Input = () => {
           />
         </div>
         <div className="button input">
-          <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>
-            送信
+          <button onClick={() => history.push('/confirm')} onTouchStart={() => {}} disabled={buttondisabled}>
+            確認
           </button>
           <p className="comment">
             入力された連絡先の

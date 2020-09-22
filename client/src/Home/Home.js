@@ -1,9 +1,12 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
+
 import Logo from '../Component/Logo/Logo'
 
 import './Home.css'
 
 const Home = () => {
+  const history = useHistory()
   return (
     <div className="home">
       <div className="logo">
@@ -17,7 +20,7 @@ const Home = () => {
         <p>新型コロナウイルス感染症対策として来場者カードの記入をお願いしております。</p>
         <p>ご協力をお願いいたします。</p>
         <div className="button entry">
-          <button onClick={(e) => changeMode(e, 1)} className="entry" onTouchStart={() => {}}>
+          <button onClick={() => history.push('/visitor')} className="entry" onTouchStart={() => {}}>
             記入する
           </button>
         </div>

@@ -8,6 +8,10 @@ app.listen(3010)
 // クライアントアプリを返す
 const client = './client/build'
 app.use('/', express.static(client))
+app.use('/home', express.static(client))
+app.use('/visitor', express.static(client))
+app.use('/confirm', express.static(client))
+app.use('/exit', express.static(client))
 
 // データベース
 const path = require('path')

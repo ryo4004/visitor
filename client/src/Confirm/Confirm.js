@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import request from 'superagent'
 import Logo from '../Component/Logo/Logo'
 import { Actions } from '../Component/Flux/Actions'
@@ -8,6 +9,7 @@ import PostalCode from '../PostalCode/PostalCode'
 // import './Confirm.css'
 
 const Confirm = () => {
+  const history = useHistory()
   const [mode, setMode] = useState(0)
   const [name, setName] = useState('')
   const [code, setCode] = useState('')
@@ -23,13 +25,13 @@ const Confirm = () => {
       .send({ name, code, address, tel })
       .end((err, res) => {
         if (res.body.status) {
-          setMode(1)
           setName('')
           setCode('')
           setAddress('')
           setTel('')
           window.scrollTo(0, 0)
           Actions.toastShow('送信しました')
+          history.push('/exit')
         }
       })
   }
