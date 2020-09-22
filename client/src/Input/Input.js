@@ -17,7 +17,7 @@ const useInput = () => {
         tel: '',
       }
 
-  const [state, setState] = useState(defalutInput)
+  const [state, setState] = useState(defaultInput)
 
   const updateState = (key, value) => {
     setState({
