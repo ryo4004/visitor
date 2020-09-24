@@ -3,8 +3,6 @@ import { useHistory } from 'react-router-dom'
 
 import Logo from '../../Component/Logo/Logo'
 
-import './Home.css'
-
 const Home = () => {
   const history = useHistory()
   return (

@@ -9,6 +9,8 @@ import Exit from './Exit/Exit'
 
 import Logo from '../Component/Logo/Logo'
 
+import './Pages.css'
+
 const Pages = () => {
   return (
     <div className="pages">
