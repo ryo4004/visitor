@@ -47,48 +47,35 @@ const Confirm = () => {
 
   return (
     <div className="home">
-      <div className="logo">
-        <Logo />
+      <div className="title">
+        <h2>Visitor card</h2>
+        <h1>来場者カード</h1>
       </div>
-      <div className="layout">
-        <div className="title">
-          <h2>Visitor card</h2>
-          <h1>来場者カード</h1>
-        </div>
-        <div className="form">
-          <label>お名前</label>
-          <p>{state.name}</p>
-          <label>郵便番号</label>
-          <p>{state.code}</p>
-          <label>ご住所</label>
-          <p>{state.address}</p>
-          <label>電話番号</label>
-          <p>{state.tel}</p>
-        </div>
-        <div className="button input">
-          <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>
-            送信
-          </button>
-          <p className="comment">
-            入力された連絡先の
-            <wbr />
-            目的外使用はしません。
-          </p>
-          <p>
-            <a href="https://winds-n.com/policy" target="_blank">
-              詳しくはこちら
-            </a>
-          </p>
-        </div>
+      <div className="form">
+        <label>お名前</label>
+        <p>{state.name}</p>
+        <label>郵便番号</label>
+        <p>{state.code}</p>
+        <label>ご住所</label>
+        <p>{state.address}</p>
+        <label>電話番号</label>
+        <p>{state.tel}</p>
       </div>
-      <footer>
-        <div>
-          <div className="author">
-            <Logo />
-            <small>&copy; The Wind Ensemble 1985-{new Date().getFullYear()} All Rights Reserved.</small>
-          </div>
-        </div>
-      </footer>
+      <div className="button input">
+        <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>
+          送信
+        </button>
+        <p className="comment">
+          入力された連絡先の
+          <wbr />
+          目的外使用はしません。
+        </p>
+        <p>
+          <a href="https://winds-n.com/policy" target="_blank">
+            詳しくはこちら
+          </a>
+        </p>
+      </div>
     </div>
   )
 }
