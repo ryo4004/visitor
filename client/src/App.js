@@ -2,11 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Scroll from './Component/Scroll/Scroll'
-import Base from './Pages/Base/Base'
-import Home from './Pages/Home/Home'
-import Input from './Pages/Input/Input'
-import Confirm from './Pages/Confirm/Confirm'
-import Exit from './Pages/Exit/Exit'
+import Pages from './Pages/Pages'
 import Toast from './Component/Toast/Toast'
 
 export default class App extends Component {
@@ -16,11 +12,7 @@ export default class App extends Component {
         <Toast />
         <Scroll>
           <Switch>
-            <Route exact path="/" component={Base} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/visitor" component={Input} />
-            <Route exact path="/confirm" component={Confirm} />
-            <Route exact path="/exit" component={Exit} />
+            <Route path="/" component={Pages} />
           </Switch>
         </Scroll>
       </Router>
