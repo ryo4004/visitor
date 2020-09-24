@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import Logo from '../Component/Logo/Logo'
+import Logo from '../../Component/Logo/Logo'
 
 // import './Exit.css'
 

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import request from 'superagent'
-import Logo from '../Component/Logo/Logo'
-import { Actions } from '../Component/Flux/Actions'
+import Logo from '../../Component/Logo/Logo'
+import { Actions } from '../../Component/Flux/Actions'
 
-import PostalCode from '../PostalCode/PostalCode'
+import PostalCode from '../../PostalCode/PostalCode'
 
-import { useInput } from '../hooks/useInput'
+import { useInput } from '../../hooks/useInput'
 
 // import './Confirm.css'
 
