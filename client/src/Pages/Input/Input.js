@@ -1,8 +1,5 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import request from 'superagent'
-import Logo from '../../Component/Logo/Logo'
-import { Actions } from '../../Component/Flux/Actions'
 
 import PostalCode from '../../PostalCode/PostalCode'
 
