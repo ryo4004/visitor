@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+
+import { useInput } from '../../hooks/useInput'
 
 import './Home.css'
 
 const Home = () => {
   const history = useHistory()
+  const { resetState } = useInput()
+  useEffect(() => {
+    resetState()
+  }, [])
+
   return (
     <div className="home">
       <div className="title">
