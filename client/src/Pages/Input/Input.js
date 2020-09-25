@@ -5,7 +5,7 @@ import PostalCode from '../../PostalCode/PostalCode'
 
 import { useInput } from '../../hooks/useInput'
 
-// import './Input.css'
+import './Input.css'
 
 const Input = () => {
   const history = useHistory()
@@ -14,7 +14,7 @@ const Input = () => {
   const buttondisabled = state.name === '' || state.address === '' || state.tel === '' ? true : false
 
   return (
-    <div className="home">
+    <div className="input">
       <div className="title">
         <h2>Visitor card</h2>
         <h1>来場者カード</h1>

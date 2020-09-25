@@ -6,7 +6,7 @@ import { Actions } from '../../Component/Flux/Actions'
 
 import { useInput } from '../../hooks/useInput'
 
-// import './Confirm.css'
+import './Confirm.css'
 
 const Confirm = () => {
   const history = useHistory()
@@ -44,20 +44,28 @@ const Confirm = () => {
   const buttondisabled = name === '' || address === '' || tel === '' ? true : false
 
   return (
-    <div className="home">
+    <div className="confirm">
       <div className="title">
         <h2>Visitor card</h2>
         <h1>来場者カード</h1>
       </div>
       <div className="form">
-        <label>お名前</label>
-        <p>{state.name}</p>
-        <label>郵便番号</label>
-        <p>{state.code}</p>
-        <label>ご住所</label>
-        <p>{state.address}</p>
-        <label>電話番号</label>
-        <p>{state.tel}</p>
+        <div>
+          <label>お名前</label>
+          <p>{state.name}</p>
+        </div>
+        <div>
+          <label>郵便番号</label>
+          <p>{state.code}</p>
+        </div>
+        <div>
+          <label>ご住所</label>
+          <p>{state.address}</p>
+        </div>
+        <div>
+          <label>電話番号</label>
+          <p>{state.tel}</p>
+        </div>
       </div>
       <div className="button input">
         <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>
