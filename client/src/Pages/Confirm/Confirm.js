@@ -10,24 +10,20 @@ import './Confirm.css'
 
 const Confirm = () => {
   const history = useHistory()
-  const { state } = useInput()
+  const { state, resetState } = useInput()
 
   console.log(state)
 
   const sendPost = (e) => {
     e.preventDefault()
-    if (name === '' || address === '' || tel === '') return false
+    if (state.name === '' || state.address === '' || state.tel === '') return false
     request
       .post('/post')
       .type('form')
-      .send({ name, code, address, tel })
+      .send({ name: state.name, code: state.code, address: state.address, tel: state.tel })
       .end((err, res) => {
         if (res.body.status) {
-          setName('')
-          setCode('')
-          setAddress('')
-          setTel('')
-          localStorage.clear()
+          resetState()
           window.scrollTo(0, 0)
           Actions.toastShow('送信しました')
           history.push('/exit')
@@ -35,13 +31,7 @@ const Confirm = () => {
       })
   }
 
-  const changeMode = (e, mode) => {
-    e.preventDefault()
-    setMode(mode)
-    window.scrollTo(0, 0)
-  }
-
-  const buttondisabled = name === '' || address === '' || tel === '' ? true : false
+  const buttondisabled = state.name === '' || state.address === '' || state.tel === '' ? true : false
 
   return (
     <div className="confirm">
@@ -67,7 +57,7 @@ const Confirm = () => {
           <p>{state.tel}</p>
         </div>
       </div>
-      <div className="button input">
+      <div className="button confirm">
         <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>
           送信
         </button>

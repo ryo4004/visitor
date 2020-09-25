@@ -20,5 +20,13 @@ export const useInput = () => {
     localStorage.setItem('value', JSON.stringify(update))
     setState(update)
   }
-  return { state, updateState }
+
+  const resetState = () => {
+    updateState('name', '')
+    updateState('code', '')
+    updateState('address', '')
+    updateState('tel', '')
+    localStorage.clear()
+  }
+  return { state, updateState, resetState }
 }
