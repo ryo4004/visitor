@@ -12,8 +12,6 @@ const Confirm = () => {
   const history = useHistory()
   const { state, resetState } = useInput()
 
-  console.log(state)
-
   const sendPost = (e) => {
     e.preventDefault()
     if (state.name === '' || state.address === '' || state.tel === '') return false
@@ -33,6 +31,10 @@ const Confirm = () => {
 
   const buttondisabled = state.name === '' || state.address === '' || state.tel === '' ? true : false
 
+  const errorMessageName = state.name === '' ? <div className="err">お名前が入力されておりません</div> : null
+  const errorMessageAddress = state.address === '' ? <div className="err">ご住所が入力されておりません</div> : null
+  const errorMessageTel = state.address === '' ? <div className="err">電話番号が入力されておりません</div> : null
+
   return (
     <div className="confirm">
       <div className="title">
@@ -43,6 +45,7 @@ const Confirm = () => {
         <div>
           <label>お名前</label>
           <p>{state.name}</p>
+          {errorMessageName}
         </div>
         <div>
           <label>郵便番号</label>
@@ -51,13 +54,18 @@ const Confirm = () => {
         <div>
           <label>ご住所</label>
           <p>{state.address}</p>
+          {errorMessageAddress}
         </div>
         <div>
           <label>電話番号</label>
           <p>{state.tel}</p>
+          {errorMessageTel}
         </div>
       </div>
       <div className="button confirm">
+        <button onClick={() => history.push('/visitor')} className="back" onTouchStart={() => {}}>
+          修正する
+        </button>
         <button onClick={(e) => sendPost(e)} onTouchStart={() => {}} disabled={buttondisabled}>
           送信
         </button>
