@@ -1,0 +1,56 @@
+.exit {
+  .link-to-home {
+    margin: 48px 24px 0;
+    padding: 0;
+    line-height: 32px;
+
+    .link {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 0.55px solid #666;
+      font-size: 16px;
+      color: #333;
+      background: rgba(0, 0, 0, 0);
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: all ease-in-out 0.1s;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      & > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+
+        .text {
+          margin: 0 36px;
+        }
+
+        .link-arrow {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          i {
+            // margin-left: .2em;
+            color: #666;
+          }
+        }
+      }
+    }
+
+    .back-to-home {
+      display: block;
+      margin-top: 48px;
+      color: #666;
+
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+}
