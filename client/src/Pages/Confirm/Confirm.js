@@ -37,6 +37,9 @@ const Confirm = () => {
 
   return (
     <div className="confirm">
+      <div className={'message' + fontSize}>
+        <p>内容を確認後送信ボタンを押してください。</p>
+      </div>
       <div className="form">
         <div>
           <label>お名前</label>

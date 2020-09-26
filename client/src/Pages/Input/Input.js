@@ -15,6 +15,9 @@ const Input = () => {
 
   return (
     <div className="input">
+      <div className={'message'}>
+        <p>下記回答をお願いいたします。</p>
+      </div>
       <div className="form">
         <label>お名前</label>
         <input onChange={(e) => updateState('name', e.target.value)} value={state.name} placeholder="お名前" />
