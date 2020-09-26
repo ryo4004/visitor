@@ -34,7 +34,12 @@ const Input = () => {
         />
       </div>
       <div className="button input">
-        <button onClick={() => history.push('/confirm')} onTouchStart={() => {}} disabled={buttondisabled}>
+        <button
+          onClick={() => history.push('/confirm')}
+          className="input"
+          onTouchStart={() => {}}
+          disabled={buttondisabled}
+        >
           確認
         </button>
         <p className="comment">
