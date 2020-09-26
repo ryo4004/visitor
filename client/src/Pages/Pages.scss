@@ -143,6 +143,16 @@
             background: #ddd;
             color: #333;
           }
+
+          &[disabled] {
+            background: #eee;
+            color: #888;
+
+            &:hover {
+              background: #eee;
+              color: #888;
+            }
+          }
         }
 
         &.back,

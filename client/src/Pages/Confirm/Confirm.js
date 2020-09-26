@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import request from 'superagent'
 
@@ -13,15 +13,18 @@ const Confirm = () => {
   const history = useHistory()
   const { state, resetState } = useInput()
   const { fontSize, updateFontSize } = useFontsize()
+  const [loading, setLoading] = useState(false)
 
   const sendPost = (e) => {
     e.preventDefault()
     if (state.name === '' || state.address === '' || state.tel === '') return false
+    setLoading(true)
     request
       .post('/post')
       .type('form')
       .send({ name: state.name, code: state.code, address: state.address, tel: state.tel })
       .end((err, res) => {
+        setLoading(false)
         if (res.body.status) {
           resetState()
           window.scrollTo(0, 0)
@@ -31,7 +34,9 @@ const Confirm = () => {
       })
   }
 
-  const buttondisabled = state.name === '' || state.address === '' || state.tel === '' ? true : false
+  const buttondisabled = loading || state.name === '' || state.address === '' || state.tel === '' ? true : false
+  const buttonLabel = loading ? '送信中...' : '送信'
+  const backButtonDisabled = loading ? true : false
 
   const errorMessageName = state.name === '' ? <div className="err">お名前が入力されておりません</div> : null
   const errorMessageAddress = state.address === '' ? <div className="err">ご住所が入力されておりません</div> : null
@@ -84,7 +89,7 @@ const Confirm = () => {
         </p>
       </div>
       <div className="button confirm">
-        <button onClick={() => history.push('/visitor')} className={'back' + fontSize} onTouchStart={() => {}}>
+        <button onClick={() => history.push('/visitor')} className={'back' + fontSize} onTouchStart={() => {}} disabled={backButtonDisabled}>
           修正する
         </button>
         <button
@@ -93,7 +98,7 @@ const Confirm = () => {
           onTouchStart={() => {}}
           disabled={buttondisabled}
         >
-          送信
+          {buttonLabel}
         </button>
         <p className="comment">
           入力された連絡先の
