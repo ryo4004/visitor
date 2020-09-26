@@ -89,7 +89,12 @@ const Confirm = () => {
         </p>
       </div>
       <div className="button confirm">
-        <button onClick={() => history.push('/visitor')} className={'back' + fontSize} onTouchStart={() => {}} disabled={backButtonDisabled}>
+        <button
+          onClick={() => history.push('/visitor')}
+          className={'back' + fontSize}
+          onTouchStart={() => {}}
+          disabled={backButtonDisabled}
+        >
           修正する
         </button>
         <button

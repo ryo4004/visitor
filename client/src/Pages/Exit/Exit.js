@@ -10,7 +10,8 @@ const Exit = () => {
         <h2>Visitor card</h2>
         <h1>来場者カード</h1>
       </div>
-      <p>ご協力ありがとうございました</p>
+      <p>こちらで提出いただいた方は紙面での提出の必要はありません。</p>
+      <p>ご協力ありがとうございました。</p>
       <div className="link-to-home">
         <a href="https://winds-n.com" className="link">
           <div>
