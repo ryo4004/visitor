@@ -69,7 +69,7 @@ const Input = () => {
         <p className="comment">
           入力された連絡先の
           <wbr />
-          目的外使用はしません。
+          目的外使用はいたしません。
         </p>
         <p>
           <a href="https://winds-n.com/policy" target="_blank" className="policy">

@@ -75,6 +75,14 @@ const Confirm = () => {
           {errorMessageTel}
         </div>
       </div>
+      <div className={'message' + fontSize}>
+        <p>
+          <a href="https://winds-n.com/policy" target="_blank">
+            プライバシーポリシー
+          </a>
+          を確認の上、送信してください。
+        </p>
+      </div>
       <div className="button confirm">
         <button onClick={() => history.push('/visitor')} className={'back' + fontSize} onTouchStart={() => {}}>
           修正する
@@ -90,7 +98,7 @@ const Confirm = () => {
         <p className="comment">
           入力された連絡先の
           <wbr />
-          目的外使用はしません。
+          目的外使用はいたしません。
         </p>
         <p>
           <a href="https://winds-n.com/policy" target="_blank" className="policy">
