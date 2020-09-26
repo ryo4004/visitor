@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
+import Scroll from '../Component/Scroll/Scroll'
 import Base from './Base/Base'
 import Home from './Home/Home'
 import Input from './Input/Input'
@@ -19,13 +20,15 @@ const Pages = () => {
       </div>
       <div className="layout">
         <Router>
-          <Switch>
-            <Route exact path="/" component={Base} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/visitor" component={Input} />
-            <Route exact path="/confirm" component={Confirm} />
-            <Route exact path="/exit" component={Exit} />
-          </Switch>
+          <Scroll>
+            <Switch>
+              <Route exact path="/" component={Base} />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/visitor" component={Input} />
+              <Route exact path="/confirm" component={Confirm} />
+              <Route exact path="/exit" component={Exit} />
+            </Switch>
+          </Scroll>
         </Router>
       </div>
       <footer>

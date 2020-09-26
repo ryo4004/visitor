@@ -93,18 +93,18 @@
 
           &[disabled] {
             background: #ddd;
-            color: #888;            
- 
+            color: #888;
+
             &:hover {
               background: #ddd;
               color: #888;
             }
-  
+
             &:active {
               background: #ddd;
               color: #888;
             }
-  
+
             &:focus {
               box-shadow: none;
               outline: 0;
