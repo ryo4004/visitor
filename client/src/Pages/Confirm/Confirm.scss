@@ -27,4 +27,13 @@
       }
     }
   }
+
+  a.policy {
+    display: inline-block;
+    color: #666;
+
+    &:hover {
+      color: #333;
+    }
+  }
 }
