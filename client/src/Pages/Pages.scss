@@ -1,9 +1,6 @@
 @import '../_color.scss';
 
 .pages {
-  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium',
-    meiryo, sans-serif;
-
   div.logo {
     margin: 24px auto;
     max-width: 600px;
@@ -59,6 +56,9 @@
 
     .message {
       margin: 24px 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium',
+        meiryo, sans-serif;
+
       p {
         margin: 0 8px;
       }
@@ -87,7 +87,7 @@
         border: 0;
         padding: 10px;
         margin: 16px auto;
-        border-radius: 2px;
+        border-radius: 0.25rem;
         background: #ddd;
         cursor: pointer;
 
@@ -250,6 +250,8 @@
     text-align: right;
     line-height: 28px;
     z-index: 12;
+    font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium',
+      meiryo, sans-serif;
 
     span {
       margin-right: 6px;
