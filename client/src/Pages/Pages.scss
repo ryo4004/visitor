@@ -90,6 +90,31 @@
             box-shadow: 0 0 0 0.2rem rgba(234, 85, 80, 0.25);
             outline: 0;
           }
+
+          &[disabled] {
+            background: #ddd;
+            color: #888;            
+ 
+            &:hover {
+              background: #ddd;
+              color: #888;
+            }
+  
+            &:active {
+              background: #ddd;
+              color: #888;
+            }
+  
+            &:focus {
+              box-shadow: none;
+              outline: 0;
+            }
+          }
+        }
+
+        &.back,
+        &.confirm {
+          margin: 8px 0;
         }
 
         &:hover {

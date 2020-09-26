@@ -48,7 +48,7 @@ const Input = () => {
           目的外使用はしません。
         </p>
         <p>
-          <a href="https://winds-n.com/policy" target="_blank">
+          <a href="https://winds-n.com/policy" target="_blank" className="policy">
             詳しくはこちら
           </a>
         </p>
