@@ -131,6 +131,16 @@
           }
         }
 
+        &.back {
+          background: #eee;
+          color: #333;
+
+          &:hover {
+            background: #ddd;
+            color: #333;
+          }
+        }
+
         &.back,
         &.confirm {
           margin: 8px 0;
