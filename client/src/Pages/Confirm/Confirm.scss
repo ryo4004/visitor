@@ -1,6 +1,6 @@
 .confirm {
   .form {
-    margin: 24px;
+    margin: 24px 8px;
 
     & > div {
       margin-bottom: 16px;
@@ -8,12 +8,14 @@
       label {
         display: block;
         margin-bottom: 8px;
+        color: #666;
         font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
           '游ゴシック Medium', meiryo, sans-serif;
       }
 
       p {
         margin: 0;
+        font-size: 1.2em;
         font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
           '游ゴシック Medium', meiryo, sans-serif;
       }
@@ -23,12 +25,6 @@
         font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
           '游ゴシック Medium', meiryo, sans-serif;
       }
-    }
-  }
-
-  .button {
-    &.confirm {
-      margin: 24px 24px 96px;
     }
   }
 }

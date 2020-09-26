@@ -15,10 +15,6 @@ const Input = () => {
 
   return (
     <div className="input">
-      <div className="title">
-        <h2>Visitor card</h2>
-        <h1>来場者カード</h1>
-      </div>
       <div className="form">
         <label>お名前</label>
         <input onChange={(e) => updateState('name', e.target.value)} value={state.name} placeholder="お名前" />
@@ -34,6 +30,7 @@ const Input = () => {
           value={state.tel}
           type="number"
           placeholder="電話番号"
+          pattern="\d*"
         />
       </div>
       <div className="button input">

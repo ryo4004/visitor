@@ -37,10 +37,6 @@ const Confirm = () => {
 
   return (
     <div className="confirm">
-      <div className="title">
-        <h2>Visitor card</h2>
-        <h1>来場者カード</h1>
-      </div>
       <div className="form">
         <div>
           <label>お名前</label>
