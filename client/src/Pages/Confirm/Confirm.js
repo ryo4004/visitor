@@ -76,10 +76,15 @@ const Confirm = () => {
         </div>
       </div>
       <div className="button confirm">
-        <button onClick={() => history.push('/visitor')} className="back" onTouchStart={() => {}}>
+        <button onClick={() => history.push('/visitor')} className={'back' + fontSize} onTouchStart={() => {}}>
           修正する
         </button>
-        <button onClick={(e) => sendPost(e)} className="confirm" onTouchStart={() => {}} disabled={buttondisabled}>
+        <button
+          onClick={(e) => sendPost(e)}
+          className={'confirm' + fontSize}
+          onTouchStart={() => {}}
+          disabled={buttondisabled}
+        >
           送信
         </button>
         <p className="comment">

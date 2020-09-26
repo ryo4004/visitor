@@ -60,7 +60,7 @@ const Input = () => {
       <div className="button input">
         <button
           onClick={() => history.push('/confirm')}
-          className="input"
+          className={'input' + fontSize}
           onTouchStart={() => {}}
           disabled={buttondisabled}
         >

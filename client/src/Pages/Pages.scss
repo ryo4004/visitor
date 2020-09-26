@@ -89,9 +89,7 @@
         margin: 16px auto;
         border-radius: 2px;
         background: #ddd;
-        font-size: 16px;
         cursor: pointer;
-        transition: all ease-in-out 0.1s;
 
         i {
           font-size: 24px;
@@ -141,13 +139,11 @@
         &:hover {
           background: rgba(204, 148, 37, 1);
           color: #fff;
-          transition: all ease-in-out 0s;
         }
 
         &:active {
           background: rgba(204, 148, 37, 1);
           color: #fff;
-          transition: all ease-in-out 0.1s;
         }
 
         &:focus {
@@ -195,7 +191,6 @@
       background: rgba(0, 0, 0, 0);
       letter-spacing: 2px;
       text-decoration: none;
-      transition: all ease-in-out 0.1s;
 
       &:hover,
       &:focus,
