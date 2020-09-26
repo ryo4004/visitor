@@ -42,15 +42,15 @@
         }
       }
     }
+  }
 
-    .back-to-home {
-      display: inline-block;
-      margin-top: 48px;
-      color: #666;
+  .back-to-home {
+    display: inline-block;
+    margin-top: 48px;
+    color: #666;
 
-      &:hover {
-        color: #333;
-      }
+    &:hover {
+      color: #333;
     }
   }
 }
