@@ -54,7 +54,7 @@ export default class PostalCode extends Component {
         <div className="code">
           <input
             type="number"
-            // className={this.props.fontSize}
+            className={this.props.fontSize}
             value={this.props.code}
             onChange={(e) => this.props.onCodeChange(e.target.value)}
             onKeyPress={(e) => this.keyPress(e)}
@@ -63,7 +63,7 @@ export default class PostalCode extends Component {
           />
           <button
             onClick={() => this.requestZipcode()}
-            // className={this.props.fontSize}
+            className={this.props.fontSize}
             disabled={this.props.code.match(/^[0-9]{3}-?[0-9]{4}/) ? false : true}
           >
             {buttonLabel}
@@ -75,7 +75,7 @@ export default class PostalCode extends Component {
           <input
             ref={this.inputRef}
             type="text"
-            // className={this.props.fontSize}
+            className={this.props.fontSize}
             value={this.props.address}
             onChange={(e) => this.props.onAddressChange(e.target.value)}
             placeholder="ご住所"

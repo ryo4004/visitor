@@ -5,12 +5,14 @@ import request from 'superagent'
 import { Actions } from '../../Component/Flux/Actions'
 
 import { useInput } from '../../hooks/useInput'
+import { useFontsize } from '../../hooks/useFontsize'
 
 import './Confirm.css'
 
 const Confirm = () => {
   const history = useHistory()
   const { state, resetState } = useInput()
+  const { fontSize, updateFontSize } = useFontsize()
 
   const sendPost = (e) => {
     e.preventDefault()
@@ -37,10 +39,22 @@ const Confirm = () => {
 
   return (
     <div className="confirm">
+      <div className="font-size">
+        <span>文字サイズ</span>
+        <div className={'small' + (fontSize === ' small' ? ' active' : '')} onClick={() => updateFontSize('small')}>
+          小
+        </div>
+        <div className={'medium' + (fontSize === ' medium' ? ' active' : '')} onClick={() => updateFontSize('medium')}>
+          中
+        </div>
+        <div className={'large' + (fontSize === ' large' ? ' active' : '')} onClick={() => updateFontSize('large')}>
+          大
+        </div>
+      </div>
       <div className={'message' + fontSize}>
         <p>内容を確認後送信ボタンを押してください。</p>
       </div>
-      <div className="form">
+      <div className={'form' + fontSize}>
         <div>
           <label>お名前</label>
           <p>{state.name}</p>
