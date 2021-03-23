@@ -53,7 +53,6 @@ export default class PostalCode extends Component {
         <label>郵便番号</label>
         <div className="code">
           <input
-            type="number"
             className={this.props.fontSize}
             value={this.props.code}
             onChange={(e) => this.props.onCodeChange(e.target.value)}
